@@ -119,3 +119,133 @@
 //
 //
 //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Counter App",
+      debugShowMaterialGrid: false,
+      home:  MyHomepage(),
+    );
+  }
+
+}
+class MyHomepage extends StatelessWidget{
+  const MyHomepage({super.key});
+  MySnackBar(context,message){
+    return ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message))
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My Robi App"),
+        toolbarHeight: 60,
+        titleSpacing: 0,
+        toolbarOpacity: 1,
+        elevation: 0,
+        backgroundColor: Colors.cyan,
+        actions: [
+          IconButton(onPressed: (){ MySnackBar(context,"I am seach"); }, icon:Icon(Icons.search)),
+          IconButton(onPressed: (){MySnackBar(context,"I am settings");}, icon:Icon(Icons.settings)),
+          IconButton(onPressed: (){MySnackBar(context,"I am one_k_plus");}, icon:Icon(Icons.one_k_plus)),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        elevation: 10,
+        backgroundColor: Colors.purple,
+        child: Icon(Icons.add),
+        onPressed: (){
+          MySnackBar(context, " I am FlotingAcction Button");},
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        backgroundColor: Colors.blue,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home,fontWeight: FontWeight.bold,size: 30,color: Colors.red,),label:" Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.person,fontWeight: FontWeight.bold,size: 30,color: Colors.red,),label:" profile"),
+          BottomNavigationBarItem(icon: Icon(Icons.contact_page,fontWeight: FontWeight.bold,size: 30,color: Colors.red,),label:"Contact page"),
+        ],
+
+      ),
+    );
+  }
+
+}

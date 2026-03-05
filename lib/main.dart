@@ -9,11 +9,11 @@ class MyApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-  return MaterialApp(
-    debugShowMaterialGrid: false,
-    title: "TasbihScreen",
-    home: TasbihScreen(),
-  );
+    return MaterialApp(
+      debugShowMaterialGrid: false,
+      title: "TasbihScreen",
+      home: TasbihScreen(),
+    );
   }
 }
 class TasbihScreen extends StatefulWidget{
@@ -27,120 +27,114 @@ class _TasbihScreenState extends State<TasbihScreen>{
   bool isDark=false;
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
-   backgroundColor:const Color(0xffE5E5E5),
-    body: Center(
-      child: Container(
-        width: 350,
-        height: 650,
-        padding: EdgeInsets.all(20),
-        decoration:BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-            // gradient: const LinearGradient(
-            //   colors: [
-            //     Color(0xff8E6BC9),
-            //     Color(0xff7A5BBE),
-            //   ],
-            //
-            // )
-          gradient:const LinearGradient(
-              colors:[
-                Colors.deepPurple,
-                Colors.deepPurple,
+    return Scaffold(
+      backgroundColor:const Color(0xffE5E5E5),
+      body: Center(
+        child: Container(
+            width: 350,
+            height: 650,
+            padding: EdgeInsets.all(20),
+            decoration:BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+
+                gradient:const LinearGradient(
+                  colors:[
+                    Colors.deepPurple,
+                    Colors.deepPurple,
 
 
-              ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
 
-          )
-        ),
-        child: Column(
-          mainAxisAlignment:  MainAxisAlignment.center,
-          children: [
-            Text(
-                "الله أكبر",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold
-              ),
-
+                )
             ),
-            const SizedBox(height: 20,),
-            Container(
-            padding: EdgeInsets.symmetric(horizontal: 20,vertical: 6),
-              decoration: BoxDecoration(
-                  color: Colors.white24,
-                  borderRadius: BorderRadius.circular(20)
-              ),
-
-              child: const Text("0:00:40",
-                style: TextStyle(
-                    color: Colors.white
-                    ,fontSize: 20)
-                ,),
-            ),
-            const SizedBox(height: 30,),
-           const Text(
-               "Tasbih Counter",
-             style: TextStyle(color: Colors.white,fontSize: 22),
-           ),
-            const SizedBox(height: 10,),
-            Text(
-              count.toString().padLeft(3,"0"),
-              style: TextStyle(color: Colors.white,
-                  fontSize: 40,fontWeight: FontWeight.bold
-              ),),
-            const SizedBox(height: 30,),
-GestureDetector(
-  onTap: (){
-    setState(() {
-      isDark=!isDark;
-      count++;
-    });
-  },
-  child: AnimatedContainer(
-      duration: const Duration(milliseconds: 350),
-    width: 150,
-    height: 50,
-    padding: EdgeInsets.all(5),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(40),
-    color: isDark
-        ? Colors.black87
-        :Colors.black54
-    ),
-    child:  Align(
-      alignment:  isDark
-      ?Alignment.centerRight
-      :Alignment.centerLeft,
-      child:  Container(
-        width: 45,
-        height: 45,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white
-
-        ),
-      ),
-    ),
-  ),
-),
-            const SizedBox(height: 40,),
-            Row(
-              mainAxisAlignment:  MainAxisAlignment.spaceEvenly,
+            child: Column(
+              mainAxisAlignment:  MainAxisAlignment.center,
               children: [
-                buildButton(Icons.refresh),
-                buildStopButton(),
-                buildButton(Icons.pause),
+                Text(
+                  "الله أكبر",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold
+                  ),
+
+                ),
+                const SizedBox(height: 20,),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 6),
+                  decoration: BoxDecoration(
+                      color: Colors.white24,
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+
+                  child: const Text("0:00:40",
+                    style: TextStyle(
+                        color: Colors.white
+                        ,fontSize: 20)
+                    ,),
+                ),
+                const SizedBox(height: 30,),
+                const Text(
+                  "Tasbih Counter",
+                  style: TextStyle(color: Colors.white,fontSize: 22),
+                ),
+                const SizedBox(height: 10,),
+                Text(
+                  count.toString().padLeft(3,"0"),
+                  style: TextStyle(color: Colors.white,
+                      fontSize: 40,fontWeight: FontWeight.bold
+                  ),),
+                const SizedBox(height: 30,),
+                GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      isDark=!isDark;
+                      count++;
+                    });
+                  },
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 350),
+                    width: 150,
+                    height: 50,
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(40),
+                        color: isDark
+                            ? Colors.black87
+                            :Colors.black54
+                    ),
+                    child:  Align(
+                      alignment:  isDark
+                          ?Alignment.centerRight
+                          :Alignment.centerLeft,
+                      child:  Container(
+                        width: 45,
+                        height: 45,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white
+
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 40,),
+                Row(
+                  mainAxisAlignment:  MainAxisAlignment.spaceEvenly,
+                  children: [
+                    buildButton(Icons.refresh),
+                    buildStopButton(),
+                    buildButton(Icons.pause),
+                  ],
+                )
               ],
             )
-          ],
-        )
+        ),
       ),
-    ),
-  );
+    );
   }
 }
 Widget buildButton(IconData icon){
@@ -162,35 +156,3 @@ Widget   buildStopButton(){
     ),
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
