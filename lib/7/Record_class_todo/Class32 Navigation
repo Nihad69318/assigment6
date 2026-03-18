@@ -1,0 +1,84 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:new_flutter_project/7/3/Fragment/CommentFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/EmailFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/MailFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/MessageFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/PersonFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/SearchFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/SettingsFragment.dart';
+
+void main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+return MaterialApp(
+  title:  "Counter App",
+  color: Colors.greenAccent,
+  debugShowCheckedModeBanner: false,
+  home:  MyHomepage(),
+);
+  }
+
+}
+class MyHomepage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("MyHomepage"),
+        backgroundColor: Colors.cyan,
+        toolbarHeight: 80,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Activepage1()));
+
+          }, child: Text("Activepage1",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold))),
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Activepage2()));
+
+          }, child: Text("Activepage2",style: TextStyle(color: Colors.lightGreen,fontWeight: FontWeight.bold),)),
+        ],
+      ),
+    );
+  }
+}class Activepage1 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Activepage1"),
+        backgroundColor: Colors.red,
+        toolbarHeight: 80,
+      ),
+      body: Center(
+        child: ElevatedButton(onPressed: (){
+          Navigator.push(context,  MaterialPageRoute(builder: (context)=>Activepage2()));
+        }, child:Text("Activepage1")),
+      ),
+    );
+  }
+}class Activepage2 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Activepage2"),
+        backgroundColor: Colors.lightGreen,
+        toolbarHeight: 80,
+      ),
+      body: Center(
+        child: ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>Activepage1()));
+        }, child: Text("Activepage2")),
+      ),
+    );
+  }
+}

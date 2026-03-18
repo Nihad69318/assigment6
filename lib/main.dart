@@ -1,158 +1,100 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp ());
+void main(){
+  runApp(const MyApp());
 }
 class MyApp extends StatelessWidget{
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowMaterialGrid: false,
-      title: "TasbihScreen",
-      home: TasbihScreen(),
-    );
+return MaterialApp(
+  title: "PhotoGally",
+  debugShowCheckedModeBanner: false,
+  home: Activepage(),
+);
   }
-}
-class TasbihScreen extends StatefulWidget{
-  const TasbihScreen({super.key});
 
-  @override
-  State<TasbihScreen> createState() =>_TasbihScreenState();
 }
-class _TasbihScreenState extends State<TasbihScreen>{
-  int count=46;
-  bool isDark=false;
+var MyItems=[
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI8dI9Gw3qCv_hVLs8mi7FBuwlkNOwcPD8Q&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUnuYAM1fYkqh0C_GtKnKMEQEvN9-uBIOyDA&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDw2oclmP352XB03wQ_AhPdcGLeVLGP3tHNw&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4n-o7UGRICnWwmfgpCqCKNq2xvQtgWoT-7g&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCVSz22AtpmGpsbyyRLp8bjiSXU8zhpB1dgw&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKzsMl31Mb3l_gypy8Wk3Gsazp_zrhHybmzw&s","title":"Nihad"},
+
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI8dI9Gw3qCv_hVLs8mi7FBuwlkNOwcPD8Q&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUnuYAM1fYkqh0C_GtKnKMEQEvN9-uBIOyDA&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDw2oclmP352XB03wQ_AhPdcGLeVLGP3tHNw&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4n-o7UGRICnWwmfgpCqCKNq2xvQtgWoT-7g&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCVSz22AtpmGpsbyyRLp8bjiSXU8zhpB1dgw&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKzsMl31Mb3l_gypy8Wk3Gsazp_zrhHybmzw&s","title":"Nihad"},
+
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI8dI9Gw3qCv_hVLs8mi7FBuwlkNOwcPD8Q&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUnuYAM1fYkqh0C_GtKnKMEQEvN9-uBIOyDA&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDw2oclmP352XB03wQ_AhPdcGLeVLGP3tHNw&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4n-o7UGRICnWwmfgpCqCKNq2xvQtgWoT-7g&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCVSz22AtpmGpsbyyRLp8bjiSXU8zhpB1dgw&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKzsMl31Mb3l_gypy8Wk3Gsazp_zrhHybmzw&s","title":"Nihad"},
+
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI8dI9Gw3qCv_hVLs8mi7FBuwlkNOwcPD8Q&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUnuYAM1fYkqh0C_GtKnKMEQEvN9-uBIOyDA&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDw2oclmP352XB03wQ_AhPdcGLeVLGP3tHNw&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4n-o7UGRICnWwmfgpCqCKNq2xvQtgWoT-7g&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCVSz22AtpmGpsbyyRLp8bjiSXU8zhpB1dgw&s","title":"Nihad"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKzsMl31Mb3l_gypy8Wk3Gsazp_zrhHybmzw&s","title":"Nihad"},
+
+
+];
+MySnackBar(context,meassage){
+  return ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(meassage))
+  );
+}
+class Activepage extends StatelessWidget{
+  const Activepage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor:const Color(0xffE5E5E5),
-      body: Center(
-        child: Container(
-            width: 350,
-            height: 650,
-            padding: EdgeInsets.all(20),
-            decoration:BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-
-                gradient:const LinearGradient(
-                  colors:[
-                    Colors.deepPurple,
-                    Colors.deepPurple,
-
-
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-
-                )
-            ),
-            child: Column(
-              mainAxisAlignment:  MainAxisAlignment.center,
-              children: [
-                Text(
-                  "الله أكبر",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold
-                  ),
-
-                ),
-                const SizedBox(height: 20,),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 6),
-                  decoration: BoxDecoration(
-                      color: Colors.white24,
-                      borderRadius: BorderRadius.circular(20)
-                  ),
-
-                  child: const Text("0:00:40",
-                    style: TextStyle(
-                        color: Colors.white
-                        ,fontSize: 20)
-                    ,),
-                ),
-                const SizedBox(height: 30,),
-                const Text(
-                  "Tasbih Counter",
-                  style: TextStyle(color: Colors.white,fontSize: 22),
-                ),
-                const SizedBox(height: 10,),
-                Text(
-                  count.toString().padLeft(3,"0"),
-                  style: TextStyle(color: Colors.white,
-                      fontSize: 40,fontWeight: FontWeight.bold
-                  ),),
-                const SizedBox(height: 30,),
-                GestureDetector(
-                  onTap: (){
-                    setState(() {
-                      isDark=!isDark;
-                      count++;
-                    });
-                  },
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 350),
-                    width: 150,
-                    height: 50,
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40),
-                        color: isDark
-                            ? Colors.black87
-                            :Colors.black54
-                    ),
-                    child:  Align(
-                      alignment:  isDark
-                          ?Alignment.centerRight
-                          :Alignment.centerLeft,
-                      child:  Container(
-                        width: 45,
-                        height: 45,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white
-
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 40,),
-                Row(
-                  mainAxisAlignment:  MainAxisAlignment.spaceEvenly,
-                  children: [
-                    buildButton(Icons.refresh),
-                    buildStopButton(),
-                    buildButton(Icons.pause),
-                  ],
-                )
-              ],
-            )
-        ),
+return Scaffold(
+  appBar: AppBar(
+  title: Text("Photo Gallery"),
+    toolbarOpacity: 1,
+    toolbarHeight: 80,
+    titleSpacing:120,
+    backgroundColor: Colors.green,
+  ),
+  backgroundColor: Colors.blueGrey,
+  body: GridView.builder(
+    physics: BouncingScrollPhysics(),
+      padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 5,
+        mainAxisSpacing: 5,
+        childAspectRatio: 1,
       ),
-    );
+      itemCount:MyItems.length,
+      itemBuilder: (context,index){
+        return
+         Card(
+            elevation: 10,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.network(
+                MyItems[index]["img"]!,
+                fit: BoxFit.cover,
+              ),
+            ),
+         );
+      }
+  ),
+);
   }
-}
-Widget buildButton(IconData icon){
-  return Container(
-    width: 60,
-    height: 60,
-    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(15)),
-    child:Icon(icon,color: Colors.purple,),
 
-  );
-}
-Widget   buildStopButton(){
-  return Container(
-    width: 80,
-    height: 60,
-    decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15)),
-    child: Center(
-      child: Text("Stop",style: TextStyle(color: Colors.purple,fontWeight: FontWeight.bold),),
-    ),
-  );
 }

@@ -1,0 +1,150 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp( const MyApp());
+}
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Counteer Appp",
+      color: Colors.lightGreen,
+      debugShowCheckedModeBanner: false,
+      home: MyHomepage(),
+
+    );
+  }
+
+}
+class MyHomepage extends StatelessWidget{
+  const MyHomepage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+   return Scaffold(
+     appBar: AppBar(
+       title: Text("My App"),
+       toolbarOpacity: 1,
+       titleSpacing:70,
+       toolbarHeight: 60,
+       elevation: 0,
+       backgroundColor:  Colors.lightGreen,
+
+     ),
+     backgroundColor: Colors.white54,
+    //  body:
+      //SingleChildScrollView(
+     //   child: Column(
+     //     children: [
+     //       Container(
+     //
+     //           child: Container(
+     //             height: 300,
+     //             width: 400,
+     //             color: Colors.purple,
+     //             child: Text("Md Nihad Islam",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold,fontSize: 30),),
+     //           ),
+     //         ),
+     //            Container(
+     //
+     //           child: Container(
+     //             height: 300,
+     //             width: 400,
+     //             color: Colors.cyan,
+     //             child: Text("Md Nihad Islam",style: TextStyle(color: Colors.amberAccent,fontWeight: FontWeight.bold,fontSize: 30),),
+     //           ),
+     //         ),
+     //         Container(
+     //
+     //           child: Container(
+     //             height: 300,
+     //             width: 400,
+     //             color: Colors.purple,
+     //             child: Text("Md Nihad Islam",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold,fontSize: 30),),
+     //           ),
+     //         ),
+     //           Container(
+     //
+     //           child: Container(
+     //             height: 300,
+     //             width: 400,
+     //             color: Colors.cyan,
+     //             child: Text("Md Nihad Islam",style: TextStyle(color: Colors.amberAccent,fontWeight: FontWeight.bold,fontSize: 30),),
+     //           ),
+     //         ),   Container(
+     //
+     //           child: Container(
+     //             height: 300,
+     //             width: 400,
+     //             color: Colors.purple,
+     //             child: Text("Md Nihad Islam",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold,fontSize: 30),),
+     //           ),
+     //         ),
+     //           Container(
+     //
+     //           child: Container(
+     //             height: 300,
+     //             width: 400,
+     //             color: Colors.cyan,
+     //             child: Text("Md Nihad Islam",style: TextStyle(color: Colors.amberAccent,fontWeight: FontWeight.bold,fontSize: 30),),
+     //           ),
+     //         ),
+     //
+     //     ],
+     //   ),
+     // )
+
+     // body: Wrap(
+     //   runSpacing: 8,
+     //   spacing: 10,
+     //
+     //   children: List.generate(10, (index)=>Chip(label: Text("Item$index")),)
+     // ),
+
+
+     body: SingleChildScrollView(
+       child: Padding(
+         padding: const EdgeInsets.all(6),
+         child: Container(
+           padding: EdgeInsets.all(20),
+           color: Colors.black,
+           child: Column(
+             children: [
+                  Container(
+                   height: 300,
+                   width: 400,
+                   color: Colors.amberAccent,
+                    margin: EdgeInsets.all(10),
+                 ),
+               Container(
+                   height: 300,
+                   width: 400,
+                   color: Colors.cyan,
+                 ),
+                Container(
+                   height: 300,
+                   width: 400,
+                   color: Colors.green,
+                 ),
+              Container(
+                   height: 300,
+                   width: 400,
+                   color: Colors.teal,
+                 ),
+               Container(
+                   height: 300,
+                   width: 400,
+                   color: Colors.lime,
+                 ),
+             ],
+           ),
+         ),
+       ),
+     ),
+   );
+  }
+
+}

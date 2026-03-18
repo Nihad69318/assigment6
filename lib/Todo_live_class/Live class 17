@@ -1,0 +1,265 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:new_flutter_project/7/3/Fragment/CommentFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/EmailFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/MailFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/MessageFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/PersonFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/SearchFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/SettingsFragment.dart';
+
+void main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+return MaterialApp(
+  title:  "Counter App",
+  color: Colors.greenAccent,
+  debugShowCheckedModeBanner: false,
+  home:  MyHomepage(),
+);
+  }
+
+}
+class MyHomepage extends StatelessWidget{
+  MySanackBar (context,messag){
+    return ScaffoldMessenger(child: Text(messag));
+  }
+  ButtonStyle buttonStyle=ElevatedButton.styleFrom(
+    padding: EdgeInsets.all(20),
+        shadowColor: Colors.cyan,
+    backgroundColor: Colors.teal,
+    foregroundColor: Colors.white,
+    minimumSize: Size(double.infinity, 60),
+
+
+
+
+  );
+ MyHomepage({super.key});
+ var MyItem=[
+   {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzvqpiwNtuOCAbPswu89n_AgKonjRK6Nwhw&s","title":"Nihad"},
+   {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_vHcYSdm8ev44NZtergCWZ4D0MEJSy6xe3w&s","title":"Nahid"},
+   {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfI6PD4iSPHrlzNdTvpIAVL4ekFOnVLeobwA&s","title":"Nahid"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzvqpiwNtuOCAbPswu89n_AgKonjRK6Nwhw&s","title":"Nihad"},
+   {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_vHcYSdm8ev44NZtergCWZ4D0MEJSy6xe3w&s","title":"Nahid"},
+   {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfI6PD4iSPHrlzNdTvpIAVL4ekFOnVLeobwA&s","title":"Nahid"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzvqpiwNtuOCAbPswu89n_AgKonjRK6Nwhw&s","title":"Nihad"},
+   {"img":"https://i.postimg.cc/brCYh76X/Gemini-Generated-Image-576pzn576pzn576p.png","title":"Nahid"},
+   {"img":"https://i.postimg.cc/2SwnwkrG/Chat-GPT-Image-Feb-1-2026-06-28-23-PM.png","title":"Nahid"},
+   {"img":"https://i.postimg.cc/gkxmhBS0/e232d03f-8932-4529-b839-91adfc9c3c08.jpg","title":"Nahid"},
+
+
+
+ ];
+
+
+
+
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Md Nihad Islam"),
+        backgroundColor: Colors.cyan,
+        toolbarHeight: 80,
+      ),
+
+
+      //ElevatedButton
+
+      //
+      // body:Column(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: [
+      //
+      //     ElevatedButton(onPressed: (){}, child:Text("Login"),
+      //       style:ElevatedButton.styleFrom(
+      //         backgroundColor: Colors.cyan,
+      //         foregroundColor: Colors.white,
+      //         padding: EdgeInsets.all(30),
+      //         shape: RoundedRectangleBorder(
+      //           borderRadius: BorderRadius.all(Radius.circular(20))
+      //         )
+      //       )
+      //     )
+      //   ],
+      // ),
+
+                                       ////      ///     //Icons Button//
+
+      body:SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+         IconButton(onPressed: (){},icon:Icon(Icons.phone),
+            style: IconButton.styleFrom(
+              backgroundColor: Colors.black,
+              foregroundColor: Colors.white,
+              padding: EdgeInsets.all(30),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20))
+              )
+            )
+          ),
+
+
+
+          ///////////////////////        DropdawnButton/////////
+
+
+
+          DropdownButton(
+              items: [
+                DropdownMenuItem(value:"Dhaka",child: Text("Dhaka")),
+                DropdownMenuItem(value:"BElka",child: Text("Belka")),
+                DropdownMenuItem(value:"Ranpur",child: Text("Ranpur")),
+                DropdownMenuItem(value:"Kurigram",child: Text("Kurigram")),
+                DropdownMenuItem(value:"Gaibandha",child: Text("Gaibandha")),
+              ],
+              onChanged: (value){}
+          ),
+
+          ///////////////////////       chekbox        ////////
+          SizedBox(height: 30,),
+          Checkbox(value: false, onChanged: (value){}),
+
+
+
+
+
+
+
+          /////////////////////////    Switch /////////////
+          SizedBox(height: 30,),
+          Switch(value: false, onChanged: (value){}),
+
+
+
+
+
+
+          /////////////////////         Slider      ////////   ////
+
+
+          SizedBox(height: 30,),
+          Slider(value:50,
+              min:0,
+              max:100,
+              divisions:3,
+              onChanged: (value){}),
+
+
+
+
+
+
+
+
+
+
+          /////////////////////      TextField              ///////////
+
+           Padding(padding: EdgeInsets.all(30),child:  TextField(
+             decoration: InputDecoration(
+                 labelText: "Enter Your First Name",
+                 border: OutlineInputBorder(
+
+                 ),
+
+             ),
+           ),),
+            SizedBox(height: 30,),
+           Padding(padding: EdgeInsets.all(30),child:  TextField(
+             decoration: InputDecoration(
+                 labelText: "Enter Your First Name",
+                 border: OutlineInputBorder(
+
+                 ),
+
+             ),
+           ),),
+            SizedBox(height: 30,),
+           Padding(padding: EdgeInsets.all(30),child:  TextField(
+             decoration: InputDecoration(
+                 labelText: "Enter Your First Name",
+                 border: OutlineInputBorder(
+
+                 ),
+
+             ),
+           ),),
+            SizedBox(height: 30,),
+           Padding(padding: EdgeInsets.all(30),child:  TextField(
+             decoration: InputDecoration(
+                 labelText: "Enter Your First Name",
+                 border: OutlineInputBorder(
+
+                 ),
+
+             ),
+           ),),
+            SizedBox(height: 30,),
+
+
+
+
+
+            ElevatedButton(onPressed: (){},
+                child:Text("loging"),
+                style:ElevatedButton.styleFrom(
+                    backgroundColor: Colors.cyan,
+                    foregroundColor: Colors.white,
+                    padding: EdgeInsets.all(30),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(20))
+                    )
+                )
+            )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ],
+      ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    )
+    );
+  }
+}

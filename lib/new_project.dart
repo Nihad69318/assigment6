@@ -1,195 +1,8 @@
-//
-//
-//
-//
-//
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-//
-// void main(){
-//   runApp(const MyApp());
-// }
-// class MyApp extends StatelessWidget{
-//   const MyApp({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowMaterialGrid: false,
-//       title: "Tasbih Counter",
-//       home: TasbihScreen(),
-//     );
-//   }
-//
-// }
-// class TasbihScreen extends StatefulWidget{
-//   const TasbihScreen({super.key});
-//
-//   @override
-//   State<TasbihScreen> createState()=>_TasbihScreenState();
-//
-// }
-// class _TasbihScreenState extends State<TasbihScreen>{
-//   int counter=0;
-//   bool isdark=false;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.white,
-//       body: Center(
-//         child: Container(
-//             width: 600,
-//             height: 650,
-//             padding: EdgeInsets.all(25),
-//             decoration: BoxDecoration(
-//                 borderRadius: BorderRadius.circular(25),
-//                 gradient: LinearGradient(
-//                     colors:[
-//                       Colors.deepPurple,
-//                       Colors.deepPurple,
-//                     ],
-//                     begin: Alignment.topLeft,
-//                     end: Alignment.bottomRight
-//                 )
-//             ),
-//             child:Column(
-//               mainAxisAlignment:MainAxisAlignment.center,
-//               children: [
-//                 Text("لله أكبرا",
-//                   style: TextStyle(
-//                       fontWeight: FontWeight.bold,
-//                       fontSize: 30,
-//                       color: Colors.white
-//                   ),
-//
-//                 ),
-//                 const SizedBox(height: 20,),
-//                 Container(
-//                   padding: EdgeInsets.all(5),
-//                   decoration: BoxDecoration(
-//                     borderRadius: BorderRadius.circular(30),
-//                     color: Colors.white54,
-//                   ),
-//                   child: Text("0:00:40",
-//                     style:TextStyle(
-//                       color: Colors.white,
-//                       fontSize: 20,
-//                       fontWeight: FontWeight.bold,
-//                     ),
-//
-//                   ),
-//
-//                 ),
-//                 const SizedBox(height: 30,),
-//                 const Text(
-//                   "Tasbih Counter",
-//                   style: TextStyle(
-//                     color: Colors.white,
-//                     fontSize: 20,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//                 const SizedBox(height: 10,),
-//                 // Text(
-//                 //     count.toString().padLeft(3, '0')
-//                 // )
-//                 Text(
-//                   count.toString().padLeft(3, '0'),
-//                   style: TextStyle(
-//                     color: Colors.white,
-//                     fontWeight: FontWeight.bold,
-//                     fontSize: 40,
-//                   ),
-//                 ),
-//
-//
-//
-//               ],
-//             )
-//         ),
-//       ),
-//     );
-//   }
-//
-// }
-//
-//
-//
-//
-//
-//
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(const MyApp());
+void main() {
+  runApp(const MyApp ());
 }
 class MyApp extends StatelessWidget{
   const MyApp({super.key});
@@ -197,55 +10,212 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Counter App",
       debugShowMaterialGrid: false,
-      home:  MyHomepage(),
+      title: "TasbihScreen",
+      home: TasbihScreen(),
     );
   }
-
 }
-class MyHomepage extends StatelessWidget{
-  const MyHomepage({super.key});
-  MySnackBar(context,message){
-    return ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(message))
-    );
-  }
+class TasbihScreen extends StatefulWidget{
+  const TasbihScreen({super.key});
 
+  @override
+  State<TasbihScreen> createState() =>_TasbihScreenState();
+}
+class _TasbihScreenState extends State<TasbihScreen>{
+  int count=46;
+  bool isDark=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("My Robi App"),
-        toolbarHeight: 60,
-        titleSpacing: 0,
-        toolbarOpacity: 1,
-        elevation: 0,
-        backgroundColor: Colors.cyan,
-        actions: [
-          IconButton(onPressed: (){ MySnackBar(context,"I am seach"); }, icon:Icon(Icons.search)),
-          IconButton(onPressed: (){MySnackBar(context,"I am settings");}, icon:Icon(Icons.settings)),
-          IconButton(onPressed: (){MySnackBar(context,"I am one_k_plus");}, icon:Icon(Icons.one_k_plus)),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        elevation: 10,
-        backgroundColor: Colors.purple,
-        child: Icon(Icons.add),
-        onPressed: (){
-          MySnackBar(context, " I am FlotingAcction Button");},
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        backgroundColor: Colors.blue,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home,fontWeight: FontWeight.bold,size: 30,color: Colors.red,),label:" Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.person,fontWeight: FontWeight.bold,size: 30,color: Colors.red,),label:" profile"),
-          BottomNavigationBarItem(icon: Icon(Icons.contact_page,fontWeight: FontWeight.bold,size: 30,color: Colors.red,),label:"Contact page"),
-        ],
+      backgroundColor:const Color(0xffE5E5E5),
+      body: Center(
+        child: Container(
+            width: 350,
+            height: 650,
+            padding: EdgeInsets.all(20),
+            decoration:BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
 
+                gradient:const LinearGradient(
+                  colors:[
+                    Colors.deepPurple,
+                    Colors.deepPurple,
+
+
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+
+                )
+            ),
+            child: Column(
+              mainAxisAlignment:  MainAxisAlignment.center,
+              children: [
+                Text(
+                  "الله أكبر",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold
+                  ),
+
+                ),
+                const SizedBox(height: 20,),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 6),
+                  decoration: BoxDecoration(
+                      color: Colors.white24,
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+
+                  child: const Text("0:00:40",
+                    style: TextStyle(
+                        color: Colors.white
+                        ,fontSize: 20)
+                    ,),
+                ),
+                const SizedBox(height: 30,),
+                const Text(
+                  "Tasbih Counter",
+                  style: TextStyle(color: Colors.white,fontSize: 22),
+                ),
+                const SizedBox(height: 10,),
+                Text(
+                  count.toString().padLeft(3,"0"),
+                  style: TextStyle(color: Colors.white,
+                      fontSize: 40,fontWeight: FontWeight.bold
+                  ),),
+                const SizedBox(height: 30,),
+                GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      isDark=!isDark;
+                      count++;
+                    });
+                  },
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 350),
+                    width: 150,
+                    height: 50,
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(40),
+                        color: isDark
+                            ? Colors.black87
+                            :Colors.black54
+                    ),
+                    child:  Align(
+                      alignment:  isDark
+                          ?Alignment.centerRight
+                          :Alignment.centerLeft,
+                      child:  Container(
+                        width: 45,
+                        height: 45,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white
+
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 40,),
+                Row(
+                  mainAxisAlignment:  MainAxisAlignment.spaceEvenly,
+                  children: [
+                    buildButton(Icons.refresh),
+                    buildStopButton(),
+                    buildButton(Icons.pause),
+                  ],
+                )
+              ],
+            )
+        ),
       ),
     );
   }
-
 }
+Widget buildButton(IconData icon){
+  return Container(
+    width: 60,
+    height: 60,
+    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(15)),
+    child:Icon(icon,color: Colors.purple,),
+
+  );
+}
+Widget   buildStopButton(){
+  return Container(
+    width: 80,
+    height: 60,
+    decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15)),
+    child: Center(
+      child: Text("Stop",style: TextStyle(color: Colors.purple,fontWeight: FontWeight.bold),),
+    ),
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

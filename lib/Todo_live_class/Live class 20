@@ -1,0 +1,274 @@
+   //////////////// main dart/////////////////
+
+
+
+
+   import 'package:flutter/cupertino.dart';
+   import 'package:flutter/material.dart';
+   import 'package:new_flutter_project/7/3/Fragment/page_Two.dart';
+   import 'package:new_flutter_project/7/3/Fragment/page_four.dart';
+   import 'package:new_flutter_project/7/3/Fragment/page_one.dart';
+   import 'package:new_flutter_project/7/3/Fragment/page_three.dart';
+
+   void main() {
+
+     runApp(const MyApp());
+   }
+   class MyApp extends StatelessWidget{
+     const MyApp({super.key});
+
+     @override
+     Widget build(BuildContext context) {
+       return MaterialApp(
+         debugShowCheckedModeBanner: false,
+         routes: {
+           '/page_One':(context)=>page_one(),
+           '/page_Two':(context)=>page_Two(),
+           '/page_Three':(context)=>page_Three(),
+           '/page_Four':(context)=>page_four(),
+         },
+         home: page_one(),
+       );
+     }
+
+   }
+
+
+   
+   
+   /////page 1  ////////
+
+
+   import 'package:flutter/cupertino.dart';
+   import 'package:flutter/material.dart';
+   import 'package:new_flutter_project/7/3/Fragment/page_Two.dart';
+
+   class page_one extends StatefulWidget{
+     @override
+     State<page_one> createState() =>_page_oneState();
+
+   }
+   class _page_oneState extends State<page_one>{
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold(
+         appBar:  AppBar(
+           title: Text("Page_One"),
+           toolbarHeight: 60,
+           titleSpacing: 100,
+           elevation: 0,
+           backgroundColor: Colors.amberAccent,
+
+         ),
+         body: Column(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+
+             ElevatedButton(onPressed: (){
+               Navigator.push(context, MaterialPageRoute(builder: (context)=>page_Two()));
+             }, child: Text("pageScreen_One",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 30),)),
+
+           ],
+         ),
+         backgroundColor: Colors.white70,
+
+
+       );
+     }
+
+   }
+   
+   
+   
+   
+   
+   ////////   page 2 ///////
+
+
+   import 'package:flutter/cupertino.dart';
+   import 'package:flutter/material.dart';
+   import 'package:new_flutter_project/7/3/Fragment/page_three.dart';
+
+   class page_Two extends StatefulWidget{
+     @override
+     State<page_Two> createState() =>_page_twoState();
+
+   }
+   class _page_twoState extends State<page_Two>{
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold(
+
+         appBar:  AppBar(
+           title: Text("Page_Two"),
+           toolbarHeight: 60,
+           titleSpacing: 100,
+           elevation: 0,
+           backgroundColor: Colors.indigo,
+         ),
+         body: Column(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+             ElevatedButton(onPressed: (){
+
+               //Navigator.push(context, MaterialPageRoute(builder: (context)=>page_Two()));
+
+               Navigator.pushNamed(context, "/page_One",arguments: {
+                 'name':'Nihad',
+                 'age':30
+               });
+
+
+               // Navigator.of(context).pop()
+
+
+
+             }, child: Text("back main dart",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 30),)),
+             ElevatedButton(onPressed: (){
+               Navigator.push(context, MaterialPageRoute(builder: (context)=>page_Three()));
+             }, child: Text("page_Two",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 30),))
+
+
+
+           ],
+         ),
+         backgroundColor: Colors.teal,
+
+
+
+       );
+     }
+
+   }
+   
+   
+   
+   
+   
+   ////// page 3 //////////
+
+
+   import 'package:flutter/cupertino.dart';
+   import 'package:flutter/material.dart';
+   import 'package:new_flutter_project/7/3/Fragment/page_four.dart';
+
+   class page_Three extends StatefulWidget{
+     @override
+     State<page_Three> createState() =>_page_ThreeState();
+
+   }
+   class _page_ThreeState extends State<page_Three>{
+
+     @override
+     void initState() {
+       // TODO: implement initState
+       super.initState();
+     }
+     @override
+     Widget build(BuildContext context) {
+       // final arg=ModalRoute.of(context)!.settings.arguments as Map<String,dynamic>;
+       // final name=arg["name"];
+       // final age =arg["age"];
+       return Scaffold(
+         appBar:  AppBar(
+           title: Text("page_Three"),
+           toolbarHeight: 60,
+           titleSpacing: 100,
+           elevation: 0,
+           backgroundColor: Colors.indigo,
+
+         ),
+         body: Column(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+
+             ElevatedButton(onPressed: (){
+
+               Navigator.pop(context);
+
+
+             }, child:Text(" back_to_Page_Two",style: TextStyle(color: Colors.black,fontSize: 30,fontWeight: FontWeight.bold),)),
+
+
+
+             ElevatedButton(onPressed: (){
+
+
+
+               Navigator.push(context, MaterialPageRoute(builder: (context)=>page_four()));
+
+
+
+             }, child:Text("Page_Three",style: TextStyle(color: Colors.black,fontSize: 30,fontWeight: FontWeight.bold),)),
+
+           ],
+         ),
+         backgroundColor: Colors.brown,
+
+
+       );
+     }
+
+   }
+   
+   
+   
+   
+   
+   
+   
+    //////////// page 4 //////////
+   import 'package:flutter/cupertino.dart';
+
+   import 'package:flutter/cupertino.dart';
+   import 'package:flutter/material.dart';
+   import 'package:new_flutter_project/7/3/Fragment/page_Two.dart';
+
+   class page_four extends StatefulWidget{
+     @override
+     State<page_four> createState() =>_page_fourState();
+
+   }
+   class _page_fourState extends State<page_four> {
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold(
+         appBar:  AppBar(
+           title: Text("page_Three"),
+           toolbarHeight: 60,
+           titleSpacing: 100,
+           elevation: 0,
+           backgroundColor: Colors.indigo,
+
+         ),
+         body: Column(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+
+             ElevatedButton(onPressed: (){
+
+
+               //Navigator.push(context, MaterialPageRoute(builder: (context)=>page_four()));
+               Navigator.pop(context);
+
+
+
+             }, child:Text("back to Page_Three",style: TextStyle(color: Colors.black,fontSize: 30,fontWeight: FontWeight.bold),)),
+
+
+
+             ElevatedButton(onPressed: (){
+
+               Navigator.pushAndRemoveUntil((context), MaterialPageRoute(builder: (context)=>page_Two()), (route)=>false);
+
+             }, child:Text("Page_Four",style: TextStyle(color: Colors.black,fontSize: 30,fontWeight: FontWeight.bold),))
+
+           ],
+         ),
+         backgroundColor: Colors.amberAccent,
+
+
+       );
+     }
+
+   }

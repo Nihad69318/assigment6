@@ -1,0 +1,500 @@
+//Singlechildscrollview
+
+
+
+ SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      physics: BouncingScrollPhysics(),
+      padding: EdgeInsetsGeometry.symmetric(
+        horizontal: 10,
+        vertical: 10,
+      ),
+      child:Column(
+        children: [
+          Container(height: 200,width: 200,color: Colors.amber,),
+          Container(height: 200,width: 200,color: Colors.teal,),
+          Container(height: 200,width:200,color: Colors.lightGreen,),
+          Container(height: 200,width: 200,color: Colors.amberAccent,),
+          Container(height: 200,width: 200,color: Colors.amber,),
+          Container(height: 200,width: 200,color: Colors.teal,),
+          Container(height: 200,width:200,color: Colors.lightGreen,),
+          Container(height: 200,width: 200,color: Colors.amberAccent,),
+          Container(height: 200,width: 200,color: Colors.amber,),
+          Container(height: 200,width: 200,color: Colors.teal,),
+          Container(height: 200,width:200,color: Colors.lightGreen,),
+          Container(height: 200,width: 200,color: Colors.amberAccent,),
+          Container(height: 200,width: 200,color: Colors.amber,),
+          Container(height: 200,width: 200,color: Colors.teal,),
+          Container(height: 200,width:200,color: Colors.lightGreen,),
+          Container(height: 200,width: 200,color: Colors.amberAccent,),
+          Container(height: 200,width: 200,color: Colors.amber,),
+          Container(height: 200,width: 200,color: Colors.teal,),
+          Container(height: 200,width:200,color: Colors.lightGreen,),
+          Container(height: 200,width: 200,color: Colors.amberAccent,),
+          Container(height: 200,width: 200,color: Colors.amber,),
+          Container(height: 200,width: 200,color: Colors.teal,),
+          Container(height: 200,width:200,color: Colors.lightGreen,),
+          Container(height: 200,width: 200,color: Colors.amberAccent,),
+          Container(height: 200,width: 200,color: Colors.amber,),
+          Container(height: 200,width: 200,color: Colors.teal,),
+          Container(height: 200,width:200,color: Colors.lightGreen,),
+          Container(height: 200,width: 200,color: Colors.amberAccent,),
+        ],
+
+      ),
+    ),
+
+
+
+
+
+               ///List view/////  //// ///
+
+
+
+
+               ListView(
+                     physics: BouncingScrollPhysics(),
+                     padding: EdgeInsetsGeometry.all(10),
+                     children: [
+                       Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),     Card(
+                         child: ListTile(
+                           title: Text("Enter your First Name"),
+                           leading:Icon(Icons.add) ,
+                           subtitle: Text("Student name"),
+                           textColor: Colors.black,
+                           iconColor: Colors.green,
+
+                         ),
+                       ),
+                     ],
+
+                   ),
+
+
+
+
+
+
+
+                   //////    Listview bullder   ///// ///
+
+
+
+
+                       body:ListView.builder(
+                            padding: EdgeInsets.all(30),
+                            physics: BouncingScrollPhysics(),
+                            itemCount: 100,
+
+                              itemBuilder:(context,index){
+                              return card(index);
+
+                          }
+                          ),
+                         backgroundColor: Colors.cyanAccent,
+                       );
+
+                        }
+                        Widget card( int index){
+                          return  Card(
+                            child: ListTile(
+                              title: Text("Enter your First Name${index+1}"),
+                              leading:Icon(Icons.add) ,
+                              subtitle: Text("Student Nihad"),
+                              textColor: Colors.black,
+                              iconColor: Colors.green,
+
+                            ),
+                          );
+                        }
+
+                      }
+
+
+
+
+
+
+
+
+
+
+                      ////Gridview   // / // //// /// /
+
+
+
+
+                      GridView.count(
+                            physics: BouncingScrollPhysics(),
+                              padding: EdgeInsets.all(10),
+                              crossAxisSpacing: 5,
+                              mainAxisSpacing: 7,
+                              crossAxisCount: 2,
+                            children: [
+                              Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.red,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.yellow,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.green,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.blueAccent,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ), Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.red,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.yellow,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.green,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.blueAccent,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ), Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.red,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.yellow,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.green,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.blueAccent,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ), Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.red,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.yellow,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.green,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.blueAccent,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ), Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.red,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.yellow,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.green,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.blueAccent,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ), Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.red,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.yellow,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.green,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),Container(
+                                width: 200,
+                                height: 200,
+                                color: Colors.blueAccent,
+                                child: Center(
+                                  child: Text("Item"),
+                                )
+                              ),
+                            ],
+                          ),
+
+
+
+
+
+                          ////   Gridview Bullder   /////////
+                          GridView.builder(
+
+                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,
+                                  crossAxisSpacing: 10,
+                                  mainAxisSpacing: 10,
+                                  childAspectRatio:1
+
+                                ),
+
+                                padding: EdgeInsets.all(10),
+                                physics: BouncingScrollPhysics(),
+
+
+                                itemCount: 100,
+                                itemBuilder: (context,index){
+                                  return Container(
+                                    color: Colors.blueAccent,
+                                    child: Center(
+                                      child: Text("item"),
+                                    ),
+                                  );
+                                },
+                                  ),
+
+
+
+
+
+                                  ///// pageView Bullder /////
+
+                                  PageView(
+                                        children: [
+                                          Container(
+                                            color: Colors.blueAccent,
+                                          ),    Container(
+                                            color: Colors.green,
+                                          ),    Container(
+                                            color: Colors.amberAccent,
+                                          ),    Container(
+                                            color: Colors.grey,
+                                          ),    Container(
+                                            color: Colors.indigo,
+                                          ),    Container(
+                                            color: Colors.blueAccent,
+                                          ),
+                                        ],
+                                      ),
+
+
+
+
+                                      //////   pageView Bullder ///////
+
+
+
+
+
+                                      PageView.builder(
+                                            itemCount: 5,
+                                              onPageChanged: (value){
+                                              print("page ${value+1}");
+                                              },
+                                              itemBuilder: (context,index){
+                                              return Container(
+                                                color: Colors.blue,
+                                                child: Text("page ${index+1}"),
+
+                                              );
+
+                                              }
+                                          ),
+

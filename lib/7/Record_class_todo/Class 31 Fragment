@@ -1,0 +1,109 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:new_flutter_project/7/3/Fragment/CommentFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/EmailFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/MailFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/MessageFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/PersonFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/SearchFragment.dart';
+import 'package:new_flutter_project/7/3/Fragment/SettingsFragment.dart';
+
+void main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+return MaterialApp(
+  title:  "Counter App",
+  color: Colors.greenAccent,
+  debugShowCheckedModeBanner: false,
+  home:  MyHomepage(),
+);
+  }
+
+}
+class MyHomepage extends StatelessWidget{
+  MySanackBar (context,messag){
+    return ScaffoldMessenger(child: Text(messag));
+  }
+  ButtonStyle buttonStyle=ElevatedButton.styleFrom(
+    padding: EdgeInsets.all(20),
+        shadowColor: Colors.cyan,
+    backgroundColor: Colors.teal,
+    foregroundColor: Colors.white,
+    minimumSize: Size(double.infinity, 60),
+
+
+
+
+  );
+ MyHomepage({super.key});
+ var MyItem=[
+   {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzvqpiwNtuOCAbPswu89n_AgKonjRK6Nwhw&s","title":"Nihad"},
+   {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_vHcYSdm8ev44NZtergCWZ4D0MEJSy6xe3w&s","title":"Nahid"},
+   {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfI6PD4iSPHrlzNdTvpIAVL4ekFOnVLeobwA&s","title":"Nahid"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzvqpiwNtuOCAbPswu89n_AgKonjRK6Nwhw&s","title":"Nihad"},
+   {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_vHcYSdm8ev44NZtergCWZ4D0MEJSy6xe3w&s","title":"Nahid"},
+   {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfI6PD4iSPHrlzNdTvpIAVL4ekFOnVLeobwA&s","title":"Nahid"},
+  {"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzvqpiwNtuOCAbPswu89n_AgKonjRK6Nwhw&s","title":"Nihad"},
+   {"img":"https://i.postimg.cc/brCYh76X/Gemini-Generated-Image-576pzn576pzn576p.png","title":"Nahid"},
+   {"img":"https://i.postimg.cc/2SwnwkrG/Chat-GPT-Image-Feb-1-2026-06-28-23-PM.png","title":"Nahid"},
+   {"img":"https://i.postimg.cc/gkxmhBS0/e232d03f-8932-4529-b839-91adfc9c3c08.jpg","title":"Nahid"},
+
+
+
+ ];
+
+
+
+
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+        length: 8,
+        child:Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.cyan,
+            title: Text("My App"),
+            bottom: TabBar(
+              isScrollable: true,
+                tabs: [
+                  Tab(icon: Icon(Icons.home,),text: "home",),
+                  Tab(icon: Icon(Icons.comment,),text: "comment",),
+                  Tab(icon: Icon(Icons.email,),text: "email",),
+                  Tab(icon: Icon(Icons.mail,),text: "mail",),
+                  Tab(icon: Icon(Icons.contact_page,),text: "contact_page",),
+                  Tab(icon: Icon(Icons.message,),text: "message",),
+                  Tab(icon: Icon(Icons.menu,),text: "menu",),
+                  Tab(icon: Icon(Icons.one_k,),text: "one_k",),
+                ]
+            )
+          ),
+          body: TabBarView(
+              children:[
+                HomeFragment(),
+                CommentFragment(),
+                Emailfragment(),
+                Mailfragment(),
+                CommentFragment(),
+                Messagefragment(),
+                MenuFragment(),
+                One_kFragment(),
+
+
+              ]
+          ),
+
+
+        ),
+    );
+
+  }
+
+}

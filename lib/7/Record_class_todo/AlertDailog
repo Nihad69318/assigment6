@@ -1,0 +1,84 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp( const MyApp());
+}
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+  return MaterialApp(
+    title: "Counter App",
+    debugShowCheckedModeBanner: false,
+    home: MyHomepage(),
+  );
+  }
+
+}
+var MyItems=[
+  {"img":"https://i.postimg.cc/brCYh76X/Gemini-Generated-Image-576pzn576pzn576p.png","title":"Nahid"},
+  {"img":"https://i.postimg.cc/2SwnwkrG/Chat-GPT-Image-Feb-1-2026-06-28-23-PM.png","title":"Nahid"},
+  {"img":"https://i.postimg.cc/gkxmhBS0/e232d03f-8932-4529-b839-91adfc9c3c08.jpg","title":"Nahid"},
+
+];
+class MyHomepage extends StatelessWidget{
+  const MyHomepage({super.key});
+MySnackBar(message,context){
+  return ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(message))
+  );
+}
+MyAlertDailog( context){
+  return showDialog(
+      context: context,
+      builder: (BuildContext contex){
+        return Expanded(
+            child: AlertDialog(
+              title: Text("Alert"),
+              content: Text("Do You Want To Delete"),
+              actions: [
+                TextButton(onPressed: (){
+                  MySnackBar("Delete Success", context);
+
+                  Navigator.of(context).pop();
+                }, child: Text("Yes")),
+                TextButton(onPressed: (){Navigator.of(context).pop();}, child: Text("No")),
+
+              ],
+            )
+
+        );
+      }
+  );
+}
+
+  @override
+  Widget build(BuildContext context) {
+  ButtonStyle buttonStyle=ElevatedButton.styleFrom(
+    padding: EdgeInsets.all(25),
+
+    backgroundColor: Colors.green,
+    foregroundColor: Colors.white,
+
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(30))
+    )
+  );
+ return Scaffold(
+   appBar: AppBar(
+     title: Text("My App"),
+     backgroundColor: Colors.green,
+     toolbarHeight: 80,
+   ),
+    body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ElevatedButton(onPressed: (){MyAlertDailog(context)();}, child:Text("Click Me"),style: buttonStyle,)
+      ],
+    )
+ );
+  }
+
+}
