@@ -1,0 +1,661 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bootstrap/flutter_bootstrap.dart';
+import 'package:responsive/responsive.dart';
+import 'package:responsive_grid/responsive_grid.dart';
+
+void main(){
+  runApp(MyApp());
+}
+ class MyApp extends StatelessWidget{
+
+
+  @override
+  Widget build(BuildContext context) {
+  return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: "Couter App",
+    home:  MyHomepage(),
+  );
+
+  }
+
+
+ }
+  class MyHomepage extends StatelessWidget{
+  const MyHomepage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+return Scaffold(
+  appBar:  AppBar(
+    title:  Text( "Photo Gallery "),
+    toolbarOpacity: 1,
+    toolbarHeight: 80,
+    titleSpacing: 100,
+    elevation: 1,
+
+  ),
+
+  body: SingleChildScrollView(
+    child: BootstrapContainer(
+      fluid: true,
+      //padding: EdgeInsets.all(10),
+      children: [
+        BootstrapRow(
+          height: 100,
+          children: [
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ), BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),     BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.greenAccent,
+              height: 100,
+            )
+        ),
+        BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.pink,
+              height: 100,
+            )
+        ),   BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.deepPurple,
+              height: 100,
+            )
+        ),BootstrapCol(
+          sizes: 'col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6',
+            child: Container(
+              color: Colors.lightGreen,
+              height: 100,
+            )
+        ),
+
+          ],
+        )
+
+
+      ],
+    ),
+  )
+ );
+
+  }
+
+  }

@@ -442,7 +442,7 @@
                                 itemCount: 100,
                                 itemBuilder: (context,index){
                                   return Container(
-                                    color: Colors.blueAccent,
+                                   color: index%2==0?Colors.red:Colors.white,
                                     child: Center(
                                       child: Text("item"),
                                     ),

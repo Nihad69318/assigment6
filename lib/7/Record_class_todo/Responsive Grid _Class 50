@@ -1,0 +1,19 @@
+ body: ResponsiveGridRow(
+      children: [
+        ResponsiveGridCol(
+          lg: 12,md: 9,
+            sm: 8,
+            xs: 12,
+            child: Container(
+              height: 100,
+              color: Colors.deepPurple,
+            ),
+        ), ResponsiveGridCol(
+          lg: 12,md: 9,
+            sm: 8,
+            xs: 12,
+            child: Container(
+              height: 100,
+              color: Colors.greenAccent,
+            ),
+        ),
