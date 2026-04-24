@@ -2,110 +2,161 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
-class NihadScreen extends StatefulWidget{
+class nihadislam extends StatefulWidget{
   @override
-  State<StatefulWidget> createState() =>NihadScreenState();
-
+  State<StatefulWidget> createState() =>nihadislamState();
 
 }
-class NihadScreenState extends State<NihadScreen>{
+class nihadislamState extends State<nihadislam>{
   final List<todoAsk>todoList=[];
   final TextEditingController todoController=TextEditingController();
-  void Addtodo(){
-    if(todoController.text.toString().trim().isEmpty){
-      return;
+  void addtodo (){
+    if (todoController.text.toString().trim().isEmpty) {
+      return ;
+
     }
-    todoList.add(todoAsk(title: todoController.text.toString().trim(), subtitle:("This is ")));
+    todoList.add(todoAsk(title: todoController.text.toString().trim(), subtitle: ("This is subtitle")));
     todoController.clear();
     setState(() {
 
     });
-
   }
-  void DeleteTodo(int index){
+  void delete(int index){
     todoList.removeAt(index);
+    setState(() {
+
+    });
+  }
+  void toggle(int index){
+    todoList[index].isDone=!todoList[index].isDone!;
     setState(() {
 
     });
 
   }
-  void Toggletodo(int index){
-    todoList[index].IsDone=!todoList[index].IsDone!;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Todo App",style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.black),),
-        toolbarOpacity: 1,
-        titleSpacing: 100,
-        toolbarHeight: 100,
-        elevation: 0,
-        backgroundColor: Colors.blueAccent,
-      ),
-
-      body:Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: todoController,
-                    decoration: InputDecoration(
-                        hintText: "Add todo",
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)
-                        )
-                    ),
-                  ),
-                ),
-                SizedBox(width: 16,),
-                ElevatedButton(onPressed: (){
-                  Addtodo();
-
-                }, child:Text("Add todo",style: TextStyle(fontWeight: FontWeight.bold),))
-              ],
-            ),
-          ),
-          Expanded(
-            child:todoList.isEmpty?
-            Center(child: Text("No Todo Data Found",style: TextStyle(fontWeight:FontWeight.bold,fontSize: 30 ),),):
-            ListView.builder(
-                itemCount: todoList.length,
-                itemBuilder: (context,index){
-                  return Card(
-                    child: Dismissible(key: Key(todoList[index].title.toString()+index.toString()),
-                      child: ListTile(
-                        title: Text(todoList[index].title.toString(),
-                          style: TextStyle(
-                              decoration:todoList[index].IsDone!? TextDecoration.lineThrough:TextDecoration.none
+        appBar: AppBar(
+          title: Text("Todo App"),
+          toolbarHeight: 100,
+          titleSpacing: 100,
+          toolbarOpacity: 1,
+          backgroundColor: Colors.blueGrey,
+        ),
+        backgroundColor: Colors.white,
+        body:Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Expanded(
+                      child: TextField(
+                        controller: todoController,
+                        decoration: InputDecoration(
+                          hintText: "Enter Add to your list",
+                          hintStyle: TextStyle(color: Colors.indigo ),
+                          filled: true,
+                          fillColor: Colors.grey.shade200,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide.none,
                           ),
                         ),
-                        leading: Checkbox(value: todoList[index].IsDone!, onChanged: (value){
-                          Toggletodo(index);
+                      )
+                  ),
+                  SizedBox(width: 10,),
 
-                        }),
+                  ElevatedButton(onPressed: (){
+                    addtodo();
+                  },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.indigoAccent,
+                          foregroundColor: Colors.white,
+                          padding: EdgeInsets.all(20),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadiusGeometry.circular(15),
+                          )
                       ),
-                      onDismissed: (_)=>{
-                        DeleteTodo(index)
 
-                      },
-                    ),
-                  );
-                }
+                      child: Icon(Icons.add)),
+
+
+
+
+
+
+                ],
+              ),
             ),
-          )
-        ],
-      ) ,
+            SizedBox(height: 15,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("All ToDos",style: TextStyle(
+                    fontWeight: FontWeight.bold,fontSize: 30,color: Colors.cyanAccent
+                ),)
+              ],
+            ),
+
+            Expanded(
+
+
+              child:todoList.isEmpty?Center(
+                child: Text("No todo Data Found",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.red,fontStyle:FontStyle.italic),),
+              ):
+              ListView.builder(
+
+
+                  itemCount: todoList.length,
+                  itemBuilder: (context,index){
+                    return Card(
+                        color: Colors.white30,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Dismissible(key: Key(todoList[index].title.toString()+index.toString()),
+                          child:ListTile(
+                            title: Text(todoList[index].title.toString(),
+                              style: TextStyle(
+                                  decoration:todoList[index].isDone!? TextDecoration.lineThrough:TextDecoration.none
+                              ),
+                            ),
+
+                            trailing: IconButton(
+                              icon: Icon(Icons.delete, color: Colors.red),
+                              onPressed: (){
+                                delete(index); // 👉 এখানে delete call
+                              },
+                            ),
+
+                            leading: Checkbox(value: todoList[index].isDone, onChanged: (value){
+                              toggle(index);
+
+                            }),
+                          ),
+                          onDismissed: (_){
+                            delete(index);
+                          },
+                        )
+
+                    );
+
+
+                  }
+              ),
+            )
+          ],
+        )
     );
   }
+
 }
-class todoAsk{
+class todoAsk {
   String?title;
   String?subtitle;
-  bool?IsDone;
-  todoAsk({required this.title,this.IsDone=false,required this.subtitle});}
+  bool?isDone;
+
+  todoAsk({required this.title, this.isDone = false, required this.subtitle});
+}
