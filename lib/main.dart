@@ -1,204 +1,176 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:new_flutter_project/Photo%20Gallery.dart';
 
-void main() {
+void main(){
   runApp(const MyApp());
 }
-class MyApp extends StatelessWidget{
+ class MyApp extends StatelessWidget{
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
- return MaterialApp(
-   debugShowCheckedModeBanner: false,
-   home: MyHomeScreen(),
- );
-  }
-
-}
-class MyHomeScreen extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() => MyHomeScreenState();
-
-}
- class MyHomeScreenState extends State<MyHomeScreen>{
-  double nihad=0.6;
-  int Count=1;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body:Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-                  Container(
-                    padding: EdgeInsets.fromLTRB(30, 40, 0, 0),
-                    child: Icon(Icons.arrow_back),
-                  ),
-                  Container(
-                    padding:EdgeInsets.fromLTRB(0, 40,30, 0),
-                    child: Icon(Icons.search),
-                  ),
-                ],
-              ),
-          SizedBox(height: 5,),
-          Image.asset("assets/images/image_10.png"),
-          SizedBox(height: 5,),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text("Hamburger Veggie Burger",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
-            ],
-          ),
-          SizedBox(height: 5,),
-         Row(
-
-            children: [
-              Padding(padding: EdgeInsetsGeometry.fromLTRB(20, 0, 0, 0)),
-
-              Icon(Icons.star,size: 30,color: Colors.amber,),
-              Text("4.8 - 14 mins",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),)
-            ],
-          ),
-          SizedBox(height: 5,),
-          Column(
-            
-            children: [
-              Container(
-                padding: EdgeInsetsGeometry.fromLTRB(25, 0, 0, 0),
-                child:    Text("Enjoy our delicious Hamburger Veggie Burger, made with a savory blend of fresh vegetables and herbs, topped with crisp lettuce, juicy tomatoes, and tangy pickles, all served on a soft, toasted bun. "
-                  ,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-              )
-           
-           
-            ],
-          ),
-          SizedBox(height: 10,),
-          Row(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-
-                  Text("Spicy",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  Slider(
-                      value: nihad,
-                      onChanged: (value){
-                        setState(() {
-                          nihad=value;
-                        });
-                      }
-                  ),
-                  Row(
-                    children: [
-                      Text("Mid",style: TextStyle(fontSize: 25,color: Colors.green,fontWeight: FontWeight.bold),),
-                      SizedBox(width:90,),
-                      Text("Hot",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.red),)
-                    ],
-                  )
-                ],
-              ),
-              SizedBox(width: 50,),
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      Text("Portion",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                      Row(
-
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: IconButton(
-                                    onPressed: (){
-                                      setState(() {
-                                        Count--;
-                                      });
-                                    },
-                                    icon: Icon(Icons.remove,color: Colors.white,size: 10,)
-                                ),
-                              ),
-
-                              Center(
-                                child: Text(
-                                  "$Count",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-
-                              SizedBox(width: 10,),
-
-
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: IconButton(
-                                    onPressed: (){
-                                      setState(() {
-                                        Count++;
-                                      });
-                                    }, 
-                                    icon: Icon(Icons.add,color: Colors.white,size: 10,)
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  )
-                ],
-              ),
-
-          SizedBox(height: 10,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-
-                children: [
-                  Padding(padding: EdgeInsetsGeometry.fromLTRB(30, 0, 0, 0)),
-                  Container(
-                    width: 80,
-                     height: 80,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(
-                      child: Text("\$9.99",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.white),),
-                    )
-                  ),
-                  SizedBox(width: 90,),
-                  Container(
-                    height: 80,
-                    width: 200,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(10),
-
-                    ),
-                    child: Center(
-                      child: Text("ORDER NOW",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),),
-                    )
-                  ),
-                ],
-              )
-            ],
-          )
-
-
-    );
-
+return MaterialApp(
+  debugShowCheckedModeBanner:  false,
+  home:  nihadislam(),
+);
   }
 
  }
+  class nihadislam extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() =>nihadislamState();
+
+  }
+   class nihadislamState extends State<nihadislam>{
+  final List<todoAsk>todoList=[];
+  final TextEditingController todoController=TextEditingController();
+  void addtodo (){
+    if (todoController.text.toString().trim().isEmpty) {
+      return ;
+
+    }
+   todoList.add(todoAsk(title: todoController.text.toString().trim(), subtitle: ("This is subtitle")));
+    todoController.clear();
+    setState(() {
+
+    });
+  }
+  void delete(int index){
+    todoList.removeAt(index);
+    setState(() {
+
+    });
+  }
+  void toggle(int index){
+    todoList[index].isDone=!todoList[index].isDone!;
+    setState(() {
+
+    });
+
+  }
+  @override
+  Widget build(BuildContext context) {
+return Scaffold(
+  appBar: AppBar(
+    title: Text("Todo App"),
+    toolbarHeight: 100,
+    titleSpacing: 100,
+    toolbarOpacity: 1,
+    backgroundColor: Colors.blueGrey,
+  ),
+  backgroundColor: Colors.white,
+  body:Column(
+  children: [
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: todoController,
+              decoration: InputDecoration(
+                hintText: "Enter Add to your list",
+                hintStyle: TextStyle(color: Colors.indigo ),
+                filled: true,
+                fillColor: Colors.grey.shade200,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide.none,
+                ),
+              ),
+            )
+            ),
+          SizedBox(width: 10,),
+
+          ElevatedButton(onPressed: (){
+            addtodo();
+          },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.indigoAccent,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.all(20),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusGeometry.circular(15),
+                )
+              ),
+
+              child: Icon(Icons.add)),
+
+
+
+
+
+
+        ],
+      ),
+    ),
+    SizedBox(height: 15,),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text("All ToDos",style: TextStyle(
+          fontWeight: FontWeight.bold,fontSize: 30,color: Colors.cyanAccent
+        ),)
+      ],
+    ),
+
+    Expanded(
+
+
+      child:todoList.isEmpty?Center(
+        child: Text("No todo Data Found",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.red,fontStyle:FontStyle.italic),),
+      ):
+      ListView.builder(
+
+
+        itemCount: todoList.length,
+          itemBuilder: (context,index){
+            return Card(
+              color: Colors.white30,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Dismissible(key: Key(todoList[index].title.toString()+index.toString()),
+                  child:ListTile(
+                    title: Text(todoList[index].title.toString(),
+                      style: TextStyle(
+                        decoration:todoList[index].isDone!? TextDecoration.lineThrough:TextDecoration.none
+                      ),
+                    ),
+
+                    trailing: IconButton(
+                      icon: Icon(Icons.delete, color: Colors.red),
+                      onPressed: (){
+                        delete(index); // 👉 এখানে delete call
+                      },
+                    ),
+
+                    leading: Checkbox(value: todoList[index].isDone, onChanged: (value){
+                      toggle(index);
+
+                    }),
+                  ),
+                onDismissed: (_){
+                delete(index);
+                },
+              )
+            
+            );
+
+
+          }
+      ),
+    )
+  ],
+  )
+);
+  }
+
+   }
+   class todoAsk{
+  String?title;
+  String?subtitle;
+  bool?isDone;
+  todoAsk({required this.title,this.isDone=false,required this.subtitle});
+   }
