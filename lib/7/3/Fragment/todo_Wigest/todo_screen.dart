@@ -2,12 +2,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class nihadislam extends StatefulWidget{
+class nihadislamn extends StatefulWidget{
   @override
-  State<StatefulWidget> createState() =>nihadislamState();
+  State<StatefulWidget> createState() =>nihadislamnState();
 
 }
-class nihadislamState extends State<nihadislam>{
+class nihadislamnState extends State<nihadislamn>{
   final List<todoAsk>todoList=[];
   final TextEditingController todoController=TextEditingController();
   void addtodo (){

@@ -35,7 +35,7 @@ return Scaffold(
             padding: EdgeInsets.fromLTRB(30, 37, 0, 0),
             width: 370,
             height: 370,
-            child: Image.asset("assets/images/image_10.png"),
+            child: Image.asset("assets/images/image 3.png"),
           )
 
         ],
