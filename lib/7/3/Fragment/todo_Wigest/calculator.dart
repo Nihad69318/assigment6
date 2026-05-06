@@ -1,143 +1,140 @@
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
-class Calculator extends StatefulWidget {
-  const Calculator({Key? key}) : super(key: key);
-
+class MyCalculatorApp extends StatefulWidget{
   @override
-  _CalculatorState createState() => _CalculatorState();
-}
+  State<StatefulWidget> createState() =>MyCalculatorAppState();
 
-class _CalculatorState extends State<Calculator> {
+}
+class MyCalculatorAppState extends State<MyCalculatorApp>{
   String input="";
   String result="0";
-  final  button=[
-    "7","8","9","➗",
-    "4","5","6","✖️",
-    "1","2","3","-",
-    "0",".","=","+",
-    "C"
+  final buttionList=[
+    "C", "DEL", "%", "÷",
+    "7", "8", "9", "x",
+    "4", "5", "6", "-",
+    "1", "2", "3", "+",
+    "0", ".", "ans", "="
   ];
+  void onbutton(String value){
 
-
-  void onButtonClick(String value){
-    if (value =="C") {
-      setState(() {
+    setState(() {
+      if (value=="C") {
         input="";
         result="0";
-      });
-      return;
 
-    }
-    if(value=="="){
-      calculateResult();
-      return;
+      }  else if (value =="DEL") {
+        if (input.isNotEmpty) {
+          input=input.substring(0,input.length-1);
 
-    }
-    setState(() {
-      input+=value;
+        }
+
+      }
+      else if (value =="=") {
+        onbuttonresult();
+
+      }  else if (value=="ans") {
+        input=result;
+
+
+      }else  {
+        input+=value;
+
+      }
+
     });
+
+
   }
-  void calculateResult(){
+  void onbuttonresult(){
     try{
-      String expression=input
-          .replaceAll('✖️', '*').replaceAll('➗', '/');
-      Parser parser=Parser();
-      Expression exp=parser.parse(expression);
+      String expression=input.replaceAll("x", "*").replaceAll("÷", "/");
+      Parser nihad=Parser();
+      Expression exp=nihad.parse(expression);
       ContextModel contextModel=ContextModel();
-      double eval=exp.evaluate(EvaluationType.REAL,contextModel);
+      double eval=exp.evaluate(EvaluationType.REAL, ContextModel());
       setState(() {
         result=eval.toString();
       });
     }catch(e){
-      setState(() {
-        result="Error";
-      });
+
+      result="Error";
     }
-
-
+  }
+  Color getBtnColor(String text) {
+    if (text == "C") return Colors.redAccent;
+    if (text == "DEL") return Colors.orangeAccent;
+    if (text == "=") return Colors.green;
+    if (["÷", "x", "-", "+", "%", "ans"].contains(text)) return Colors.blueGrey.shade700;
+    return Colors.blueGrey.shade400; // নম্বরগুলোর জন্য
   }
   @override
   Widget build(BuildContext context) {
-    return
-        Scaffold(
-          appBar: AppBar(
-            title: Text("Calculator",style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.black),),
-            toolbarOpacity: 1,
-            titleSpacing: 100,
-            toolbarHeight: 100,
-            elevation: 0,
-            backgroundColor: Colors.blueAccent,
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Calculator App"),
+        titleTextStyle: TextStyle(fontSize: 30,
+            fontWeight: FontWeight.bold,color: Colors.black,fontStyle: FontStyle.italic),
+        toolbarHeight: 100,
+        toolbarOpacity: 1,
+        elevation: 1,
+        backgroundColor: Colors.lightGreen,
+      ),
+      backgroundColor: Colors.black,
+      body: Column(
+        children: [
+
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: EdgeInsets.all(20),
+              alignment: Alignment.centerRight,
+              child: Column(
+                children: [
+                  Text("$input",style: TextStyle(fontSize: 25,fontWeight: FontWeight.normal,color: Colors.white),),
+                  SizedBox(height: 10,),
+                  Text("$result",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.white),),
+                ],),
+            ),
           ),
-          body:Column(
-            children: [
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        ///Display
-
-                        Text("$input",style: TextStyle(fontSize:20,fontWeight: FontWeight.normal ),),
-                        SizedBox(height: 10,),
-                        Text("$result",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold )),
-
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              //Buttons
-              Expanded(
-                flex: 7,
-                child: GridView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  childAspectRatio: 1,
-                ),
-                    itemCount: button.length,
-                    padding: EdgeInsets.all(16),
-                    itemBuilder: (context,index){
-                    return builButton(button[index]);
-
-                    }
-                ),
-              )
-              
-            ],
-          ) ,
-        );
+          Expanded(child: Divider(color: Colors.redAccent,)),
+          Expanded(
+            flex: 8,
+            child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount:4,
+                mainAxisSpacing: 5,
+                crossAxisSpacing: 5,
+                childAspectRatio: 1
+            ),
+                itemCount:buttionList.length ,
+                itemBuilder: (context,index){
+                  return onbuttonClick(buttionList[index]) ;
+                }
+            ),
+          )
+        ],
+      ),
+    );
   }
-  Widget builButton(String text){
+  Widget onbuttonClick(String text){
     return GestureDetector(
-   onTap: ()=>onButtonClick(text),
+      onTap: (){onbutton(text);},
       child: Container(
-        margin:const EdgeInsets.all(8),
+
+
+        margin: EdgeInsets.all(5),
         decoration: BoxDecoration(
-          color: Colors.blueGrey,
-          borderRadius: BorderRadius.circular(10),
+          color: getBtnColor(text),
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Center(
-          child: Text(
-            text,style:const TextStyle(
-            fontSize: 22,
-            color: Colors.white
-          ),
-          ),
+          child: Text(text,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35,color: Colors.white),),
         ),
       ),
-
     );
   }
 
 }
-
-

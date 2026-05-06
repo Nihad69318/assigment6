@@ -2,12 +2,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class nihadislam extends StatefulWidget{
+class nihadislamn extends StatefulWidget{
   @override
-  State<StatefulWidget> createState() =>nihadislamState();
+  State<StatefulWidget> createState() =>nihadislamnState();
 
 }
-class nihadislamState extends State<nihadislam>{
+class nihadislamnState extends State<nihadislamn>{
   final List<todoAsk>todoList=[];
   final TextEditingController todoController=TextEditingController();
   void addtodo (){
@@ -117,6 +117,10 @@ class nihadislamState extends State<nihadislam>{
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Dismissible(key: Key(todoList[index].title.toString()+index.toString()),
+
+
+
+
                           child:ListTile(
                             title: Text(todoList[index].title.toString(),
                               style: TextStyle(
@@ -159,4 +163,6 @@ class todoAsk {
   bool?isDone;
 
   todoAsk({required this.title, this.isDone = false, required this.subtitle});
+
+  static void add(String text) {}
 }
