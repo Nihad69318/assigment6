@@ -1,166 +1,176 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:new_flutter_project/Osthad/Navigation_UI.dart';
-import 'package:new_flutter_project/Osthad/Stateful_module13/Nevigator_pages/about.dart';
-import 'package:new_flutter_project/Osthad/Stateful_module13/Nevigator_pages/home.dart';
+import 'package:new_flutter_project/Photo%20Gallery.dart';
 
-
-import '7/3/Wigest/mobile__view.dart';
-import 'Model/Practicsh.dart';
-import 'Osthad/Animated.dart';
-import 'Osthad/Modul_14/todo_App.dart';
-import 'Osthad/Stateful_module13/Count.dart';
-import 'Osthad/Stateful_module13/Navigator.dart';
-
-void main() {
-   runApp(const MyApp());
+void main(){
+  runApp(const MyApp());
 }
-class MyApp extends StatelessWidget{
+ class MyApp extends StatelessWidget{
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
 return MaterialApp(
-   debugShowCheckedModeBanner:  false,
-
-
-
-
-
-
-  //
-  // routes: {
-  //    "/about":(context)=>about(),
-  //  "class2":(context)=>class2()
-  // },
-  // initialRoute: "class2",
-
-
-
-
-
-
-
-  home:Practicsh(),
-
-
-
-
-
-
-
-
+  debugShowCheckedModeBanner:  false,
+  home:  nihadislam(),
 );
   }
 
-}
-class MyHomepage extends StatelessWidget{
+ }
+  class nihadislam extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() =>nihadislamState();
 
-  TextEditingController phoneController=TextEditingController();
-  TextEditingController passwordController=TextEditingController();
-  final formkey=GlobalKey<FormState>();
+  }
+   class nihadislamState extends State<nihadislam>{
+  final List<todoAsk>todoList=[];
+  final TextEditingController todoController=TextEditingController();
+  void addtodo (){
+    if (todoController.text.toString().trim().isEmpty) {
+      return ;
 
+    }
+   todoList.add(todoAsk(title: todoController.text.toString().trim(), subtitle: ("This is subtitle")));
+    todoController.clear();
+    setState(() {
+
+    });
+  }
+  void delete(int index){
+    todoList.removeAt(index);
+    setState(() {
+
+    });
+  }
+  void toggle(int index){
+    todoList[index].isDone=!todoList[index].isDone!;
+    setState(() {
+
+    });
+
+  }
   @override
   Widget build(BuildContext context) {
 return Scaffold(
   appBar: AppBar(
-    title: Text("My Flutter App"),
+    title: Text("Todo App"),
     toolbarHeight: 100,
-    titleTextStyle: TextStyle(fontStyle: FontStyle.italic,fontSize: 30,fontWeight: FontWeight.bold),
+    titleSpacing: 100,
     toolbarOpacity: 1,
-    elevation: 0,
-    backgroundColor: Colors.tealAccent,
-    centerTitle: true,
-
+    backgroundColor: Colors.blueGrey,
   ),
-  backgroundColor: Colors.orange,
-  body: Padding(
-    padding: const EdgeInsets.all(20.0),
-    child: Form(
-      key:  formkey,
-      child: Column(
-
-        mainAxisAlignment: MainAxisAlignment.center,
+  backgroundColor: Colors.white,
+  body:Column(
+  children: [
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
         children: [
-          Text("Loging Screen,,,,,,,,,,,,,!",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,fontStyle: FontStyle.italic,color: Colors.black),),
-          SizedBox(height: 20,),
-          TextFormField(
-            controller: phoneController,
-            decoration: InputDecoration(
-              hintText: "Enter Your Phone number",
-              hintStyle: TextStyle(fontStyle: FontStyle.italic),
-              suffixIcon: Icon(Icons.check_circle,color: Colors.lightBlueAccent,),
-              prefixIcon: Icon(Icons.phone),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(50),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.green)
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.red)
-              )
-
-            ),
-            validator:  (value){
-              if (value==null||value.isEmpty) {
-                return "please enter Your Phone Number";
-
-              }  else if (value.length!=11) {
-                return "please enter your currnt phone number";
-
-              }  else{
-                return null;
-              }
-            },
-          ),
-          SizedBox(height: 20,),
-          TextFormField(
-            controller:  passwordController,
-            obscureText: true,
-            decoration: InputDecoration(
-                hintText: "Enter Your password",
-                hintStyle: TextStyle(fontStyle: FontStyle.italic),
-                suffixIcon: Icon(Icons.remove_red_eye,color: Colors.lightBlueAccent,),
-                prefixIcon: Icon(Icons.lock),
+          Expanded(
+            child: TextField(
+              controller: todoController,
+              decoration: InputDecoration(
+                hintText: "Enter Add to your list",
+                hintStyle: TextStyle(color: Colors.indigo ),
+                filled: true,
+                fillColor: Colors.grey.shade200,
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide.none,
                 ),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green)
-                ),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red)
-                )
-
+              ),
+            )
             ),
-            validator: (value){
-              if (value==null||value.isEmpty) {
-                return "enter Your password";
+          SizedBox(width: 10,),
 
-              }  else if (value.length<6) {
-                return "password must be getter than 6 charcter ";
+          ElevatedButton(onPressed: (){
+            addtodo();
+          },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.indigoAccent,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.all(20),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusGeometry.circular(15),
+                )
+              ),
 
-              }  else{
-                return null;
-              }
-            },
-          ),
-          SizedBox(height: 20,),
-          SizedBox(height: 40,
-            width: double.infinity,
-            child: ElevatedButton(onPressed: (){
-              formkey.currentState!.validate();
-            },
-                style: ElevatedButton.styleFrom(foregroundColor: Colors.white,backgroundColor: Colors.lightBlue),
-                child: Text("Submit")),
-          )
+              child: Icon(Icons.add)),
+
+
+
+
+
 
         ],
       ),
     ),
-  ),
+    SizedBox(height: 15,),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text("All ToDos",style: TextStyle(
+          fontWeight: FontWeight.bold,fontSize: 30,color: Colors.cyanAccent
+        ),)
+      ],
+    ),
+
+    Expanded(
+
+
+      child:todoList.isEmpty?Center(
+        child: Text("No todo Data Found",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.red,fontStyle:FontStyle.italic),),
+      ):
+      ListView.builder(
+
+
+        itemCount: todoList.length,
+          itemBuilder: (context,index){
+            return Card(
+              color: Colors.white30,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Dismissible(key: Key(todoList[index].title.toString()+index.toString()),
+                  child:ListTile(
+                    title: Text(todoList[index].title.toString(),
+                      style: TextStyle(
+                        decoration:todoList[index].isDone!? TextDecoration.lineThrough:TextDecoration.none
+                      ),
+                    ),
+
+                    trailing: IconButton(
+                      icon: Icon(Icons.delete, color: Colors.red),
+                      onPressed: (){
+                        delete(index); // 👉 এখানে delete call
+                      },
+                    ),
+
+                    leading: Checkbox(value: todoList[index].isDone, onChanged: (value){
+                      toggle(index);
+
+                    }),
+                  ),
+                onDismissed: (_){
+                delete(index);
+                },
+              )
+            
+            );
+
+
+          }
+      ),
+    )
+  ],
+  )
 );
   }
 
-}
+   }
+   class todoAsk{
+  String?title;
+  String?subtitle;
+  bool?isDone;
+  todoAsk({required this.title,this.isDone=false,required this.subtitle});
+   }

@@ -9,115 +9,49 @@ class Uidesign extends StatefulWidget {
 }
 
 class _UidesignState extends State<Uidesign> {
-
-
-  List<Map>CategoryItem=[
-    {
-      "image": "assets/images/image 4.png",
-      'title':'Cheeseburger',
-      'description':' Wendy Burger',
-      'ratings':'4.9'
-    },     {
-      "image": "assets/images/image 4.png",
-      'title':'Hamburger',
-      'description':'Veggie Burger',
-      'ratings':'4.8'
-    },     {
-      "image": "assets/images/image 5.png",
-      'title':'Hamburger',
-      'description':' Chicken Burger',
-      'ratings':'4.6'
-    },     {
-      "image": "assets/images/image 5.png",
-      'title':'Hamburger',
-      'description':'Fried Chicken Burger',
-      'ratings':'4.5'
-    },
-  ];
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Padding(padding: EdgeInsetsGeometry.all(16),
+      child: Column(
+
         children: [
-          Container(
-            height: 350,
-            width: double.infinity,
-            child: Column(
+          SizedBox(
+            height: 60,
+            child: Row(
+              mainAxisAlignment:  MainAxisAlignment.spaceBetween,
               children: [
-                Stack(
-                  children: [
-                    Positioned(child: Image.asset("assets/images/Cox'Bazar.jpg",fit: BoxFit.cover,)),
-                  Positioned(child: Container(color: Colors.grey.withOpacity(0.1),)),
-                    Positioned(
-                      left: 25,
-                        top:40,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Hi,Programmer!",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.white),
-                            ),  Text("Md Nihad Islam!",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),
-                            ),Text("Flutter Developer!",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18,color: Colors.white),
-                            ),
-                            SizedBox(height: 50,),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Icon(Icons.check_circle,color: Colors.purple,),
-                                Text("Mobile App Developer",style: TextStyle(color: Colors.black87,fontSize: 18,fontWeight: FontWeight.bold),)
-                              ],
-                            )
-                          ],
-                        ),
-                    ),
-
-                  ],
-                ),
-
+                Icon(Icons.arrow_back,size: 30,),
+                Icon(Icons.search,size: 30,),
               ],
             ),
           ),
-          Expanded(
-
-            child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 1,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10
+          SizedBox(
+            height: 150,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset("assets/images/Food.png"),
+                Column(
+                  
+                  children: [
+                    Padding(padding: EdgeInsetsGeometry.symmetric(vertical: 100),
+                    child: Column(
+                      children: [
+                        Text("Customize Your Burger to Your Tastes. Ultimate Experience")
+                      ],
+                    ),)
+                    
+               
+                  ],
                 ),
-                itemCount: CategoryItem.length,
-                itemBuilder: (context,index){
-                  return CategoryItemList(CategoryItem[index]);
-
-
-                }
+              ],
             ),
           )
-          
         ],
-      ),
+
+      ),)
+
     );
   }
-
-  CategoryItemList(Map Category){
-    return Container(
-      child: Card(
-        child: Padding(padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              Text(Category["image"])
-            ],
-          ),
-        ),
-      ),
-    );
-
-}
-
-
-
 }
