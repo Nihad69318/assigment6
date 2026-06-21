@@ -24,6 +24,10 @@ class _PakgeClass3State extends State<PakgeClass3> {
             //   color: Colors.lightBlueAccent,
             // ),
             // SizedBox(height: 12,),
+
+
+        //flutter_screenutil: ^5.9.3 packge
+
             // Container(
             //   height: 180.h,
             //   width: 180.w,
@@ -39,6 +43,13 @@ class _PakgeClass3State extends State<PakgeClass3> {
             //
             // Text("Hello without res",style: TextStyle(fontSize: 30),),
         //     // Text("Hello wit res",style: TextStyle(fontSize: 30.sp),),
+
+
+
+        //flutter_staggered_grid_view: ^0.7.0
+
+
+
         // StaggeredGrid.count(
         //   crossAxisCount: 4,
         //   mainAxisSpacing: 4,
@@ -120,6 +131,18 @@ class _PakgeClass3State extends State<PakgeClass3> {
            //     );
            //   }),
            // )
+
+
+
+
+
+
+
+          //  shimmer_animation
+
+
+
+
             Expanded(
               child: ListView.builder(
                 itemCount: 10,
