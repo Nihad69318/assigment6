@@ -9,6 +9,8 @@ import 'Osthad/Assingment/Counter_App/HomeScreen.dart';
 import 'Osthad/Modul_14/Costom_Dailog.dart';
 import 'Osthad/Modul_14/pakge_class3.dart';
 import 'Osthad/Modul_14/todo_App.dart';
+import 'Osthad/Practich/flutter.dart';
+import 'Weick_Exam/Weick_Exam.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,15 +28,18 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          initialRoute: '/Home',
+
+          initialRoute: '/flutter',
 
           routes: {
-            '/Homescreen': (context) => const Homescreen(),
-            '/PakgeClass3': (context) => const PakgeClass3(),
-            '/todoApp': (context) => const todoApp(),
-            '/Practicsh': (context) => const Practicsh(),
-            '/CostomDailog': (context) => const CostomDailog(),
-            '/Home': (context) => const Home(),
+            // '/Homescreen': (context) => const Homescreen(),
+            // '/PakgeClass3': (context) => const PakgeClass3(),
+            // '/todoApp': (context) => const todoApp(),
+            // '/Practicsh': (context) => const Practicsh(),
+            // '/CostomDailog': (context) => const CostomDailog(),
+            // '/Home': (context) => const Home(),
+            '/weickExam': (context) => const weickExam(),
+            '/flutter': (context) => const flutter(),
 
           },
         );
