@@ -24,7 +24,8 @@ class _BasicpageState extends State<Basicpage> {
                 child: Column(
                   crossAxisAlignment: .center,
                   children: [
-                    CircleAvatar(radius: 50, backgroundColor: Colors.blue),
+                    CircleAvatar(radius: 50, backgroundImage:AssetImage("assets/images/nihad.png")
+                    ),
                     Text(
                       "Md Nihad Islam",
                       style: TextStyle(fontSize: 20, color: Colors.black),
@@ -35,7 +36,7 @@ class _BasicpageState extends State<Basicpage> {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      "passionate about creating use-friendly and engaing digital experienes",
+                      "passionate about creating use-friendly and engaing digital experienes",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400),
                     ),
                     SizedBox(height: 5),
                     Divider(),
@@ -127,7 +128,7 @@ class _BasicpageState extends State<Basicpage> {
                             SizedBox(height: 10),
                             Text("Travel"),
                             SizedBox(height: 5),
-                            Text("Md hgdfscgjsdfkjusdfgfdfjn"),
+                            Text("I like Train Travel",style: TextStyle(fontSize: 18),),
                             SizedBox(height: 10),
                             OutlinedButton(
                               onPressed: () {},
