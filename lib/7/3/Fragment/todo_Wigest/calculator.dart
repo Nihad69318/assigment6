@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
-class MyCalculatorApp extends StatefulWidget{
+class myCalculatorApp extends StatefulWidget{
   @override
-  State<StatefulWidget> createState() =>MyCalculatorAppState();
+  State<StatefulWidget> createState() =>myCalculatorAppState();
 
 }
-class MyCalculatorAppState extends State<MyCalculatorApp>{
+class myCalculatorAppState extends State<myCalculatorApp>{
   String input="";
   String result="0";
   final buttionList=[
@@ -123,8 +123,6 @@ class MyCalculatorAppState extends State<MyCalculatorApp>{
     return GestureDetector(
       onTap: (){onbutton(text);},
       child: Container(
-
-
         margin: EdgeInsets.all(5),
         decoration: BoxDecoration(
           color: getBtnColor(text),

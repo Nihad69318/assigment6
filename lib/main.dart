@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_flutter_project/practich_Flutter/Practicsh.dart';
 
+import '7/3/Fragment/todo_Wigest/calculator.dart';
 import 'My_Ideia_Project/Frist_Idea/Home.dart';
 import 'Osthad/Animated.dart';
 import 'Osthad/Assingment/Counter_App/HomeScreen.dart';
@@ -10,7 +11,7 @@ import 'Osthad/Modul_14/Costom_Dailog.dart';
 import 'Osthad/Modul_14/pakge_class3.dart';
 import 'Osthad/Modul_14/todo_App.dart';
 import 'Osthad/Practich/flutter.dart';
-import 'Weick_Exam/Weick_Exam.dart';
+import 'Osthad/Assingment/Weick Exam/Weick_Exam.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
 
-          initialRoute: '/flutter',
+          initialRoute: '/MyCalculatorAppr',
 
           routes: {
             // '/Homescreen': (context) => const Homescreen(),
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
             // '/CostomDailog': (context) => const CostomDailog(),
             // '/Home': (context) => const Home(),
             '/weickExam': (context) => const weickExam(),
-            '/flutter': (context) => const flutter(),
+          //  '/flutter': (context) => const flutter(),
+            // '/MyCalculatorApp': (context) =>  MyCalculatorApp(),
 
           },
         );

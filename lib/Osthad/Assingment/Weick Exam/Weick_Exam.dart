@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../My_Ideia_Project/Frist_Idea/Nots.dart';
+import '../../../My_Ideia_Project/Frist_Idea/Nots.dart';
 
 class weickExam extends StatefulWidget {
   const weickExam({super.key});
